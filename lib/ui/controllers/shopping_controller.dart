@@ -19,26 +19,37 @@ class ShoppingController extends GetxController {
 
   void calcularTotal() {
     int newTotal = 0;
-    // TODO
-    // calcular el valor total de los elementos en el carro de compras
+    newTotal = (entries[0].quantity * entries[0].price) +
+        (entries[1].quantity * entries[1].price);
+
     total.value = newTotal;
+    print(total.value);
   }
 
   agregarProducto(id) {
     logInfo('agregarProducto $id');
-    // TODO
-    // Encontrar el elemento usando el id, revisar el método firstWhere de la lista
-    // después obtener el index de ese elemento, revisar el método indexOf de la lista
-    // después hacer el incremento en la cantidad
-    // finalmente actualizar entries usando el indice y el elemento actualizado
+    if (id != entries.firstWhere((id) => true)) {
+      entries.indexOf(id);
+      entries[id].quantity += 1; 
+    }
+    entries[id].quantity;
+    print(entries[id].quantity);
     calcularTotal();
   }
 
   quitarProducto(id) {
     logInfo('quitarProducto $id');
-    // TODO
-    // similar a agregarProducto
-    // validar cuando la cantidad es igual a cero
+    if (entries[id].quantity > 0) {
+      if (id != entries.firstWhere((id) => true)) {
+        entries.indexOf(id);
+        entries[id].quantity -= 1;
+      }
+      entries[id].quantity;
+    }else{
+      entries[id].quantity = 0;
+    }
+
+    print(entries[id].quantity);
     calcularTotal();
   }
 }

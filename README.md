@@ -1,11 +1,7 @@
 Proyecto base para el segundo reto
 
-El código incluye comentarios que explican la estructura del proyecto y los puntos en los que se tiene que trabajar están marcados con un TODO.
+El código incluye comentarios que explican la estructura del proyecto.
 
-El siguiente es un demo de la interfaz a la que se debe llegar (funcionalidades adicionales o mejoras a la interfaz son permitidas):
+El siguiente es un demo de la interfaz a la que se llego (funcionalidades adicionales o mejoras a la interfaz son permitidas):
 
-![shoppingApp](https://user-images.githubusercontent.com/4458129/173839525-218900ed-9bcd-4f6f-9158-0b02dd9d7707.gif)
-
-Solución:
-
-https://github.com/MisionTIC4b/f_shopping_app
+![f_shopping_app](https://user-images.githubusercontent.com/92587379/202061672-8b904318-3e46-4f9c-ba9b-38baa7c4c67c.gif)

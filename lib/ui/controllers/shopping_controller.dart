@@ -19,37 +19,31 @@ class ShoppingController extends GetxController {
 
   void calcularTotal() {
     int newTotal = 0;
-    newTotal = (entries[0].quantity * entries[0].price) +
-        (entries[1].quantity * entries[1].price);
+
+    for (Product product in entries) {
+      newTotal = newTotal + product.price * product.quantity;
+    }
 
     total.value = newTotal;
-    print(total.value);
   }
 
   agregarProducto(id) {
     logInfo('agregarProducto $id');
-    if (id != entries.firstWhere((id) => true)) {
-      entries.indexOf(id);
-      entries[id].quantity += 1; 
-    }
-    entries[id].quantity;
-    print(entries[id].quantity);
+    Product product = entries.firstWhere((element) => id == element.id);
+    int index = entries.indexOf(product);
+    product.quantity += 1;
+    entries[index] = product;
     calcularTotal();
   }
 
   quitarProducto(id) {
     logInfo('quitarProducto $id');
-    if (entries[id].quantity > 0) {
-      if (id != entries.firstWhere((id) => true)) {
-        entries.indexOf(id);
-        entries[id].quantity -= 1;
-      }
-      entries[id].quantity;
-    }else{
-      entries[id].quantity = 0;
+    Product product = entries.firstWhere((element) => id == element.id);
+    int index = entries.indexOf(product);
+    if (product.quantity > 0) {
+      product.quantity -= 1;
+      entries[index] = product;
     }
-
-    print(entries[id].quantity);
     calcularTotal();
   }
 }

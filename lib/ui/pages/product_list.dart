@@ -24,11 +24,6 @@ class _ProductListState extends State<ProductList> {
             Stack(
               children: [const CustomBanner(50), customAppBar()],
             ),
-
-            //Obx(() => Text(shoppingController.entries.toString())),
-            // TODO
-            // aquí debemos rodear el widget Expanded en un Obx para
-            // observar los cambios en la lista de entries del shoppingController
             Expanded(
               child: Obx(() => ListView.builder(
                   padding: const EdgeInsets.all(8),
@@ -37,7 +32,6 @@ class _ProductListState extends State<ProductList> {
                     return _row(shoppingController.entries[index], index);
                   })),
             )
-            
           ],
         ),
       ),
